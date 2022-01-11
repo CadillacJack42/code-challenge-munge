@@ -4,12 +4,12 @@
 
 // For this first set of functions, assume the input array looks like this:
 
-const petsArray = [
-    { name: 'spot', type: 'dog' },
-    { name: 'rover', type: 'dog' },
-    { name: 'jumpy', type: 'frog' },
-    { name: 'einstein', type: 'cat' },
-];
+// const petsArray = [
+//     { name: 'spot', type: 'dog' },
+//     { name: 'rover', type: 'dog' },
+//     { name: 'jumpy', type: 'frog' },
+//     { name: 'einstein', type: 'cat' },
+// ];
 
 // findByName('jumpy', petsArray)
 
@@ -144,7 +144,7 @@ Output:
 
 export function makeShoutingArray(arr) {
     const myNewArray = arr.map((arrayItem) => {
-        const copy = { ... arrayItem }
+        const copy = { ... arrayItem };
         copy.name = arrayItem.name.toUpperCase();
         return copy;
     });
@@ -313,8 +313,9 @@ Output:
 
 export function makeKeysString(arr) {
     const newArr = arr.map((arrayItem) => {
-        return Object.keys(arrayItem);
+        return Object.keys(arrayItem).join('');
     }).reduce((acc, arrayItem) => {
+        console.log(acc);
         return acc += arrayItem;
     }, '');
     return newArr;
